@@ -20,6 +20,7 @@
 		1DBF1C80B59471CFC7D27C87 /* ProgressTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F5DA36EB548637439CF0FF /* ProgressTracker.swift */; };
 		1F4DF4696C9AA27DB9FB974A /* SeriesDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78094152968CD929107CB4A0 /* SeriesDetailView.swift */; };
 		208CE2CAD0246CF8BDCAF7DD /* AppNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7101C9268E7B51A7753741E2 /* AppNotifications.swift */; };
+		21483393EC7D6D6D1B8AD661 /* ArtworkCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019D9A199202B4953AA69805 /* ArtworkCache.swift */; };
 		21779BBA7036F531E5E120F3 /* LibraryEnrichmentCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F89F2EA5ED4C9B85C75C581 /* LibraryEnrichmentCoordinator.swift */; };
 		2317CB7AD7813E87005B43C7 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3B17DD1E85C2D9F61B778A /* SettingsView.swift */; };
 		23385D4AE4B5FB37FD5924BB /* AppDatabaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D3048811155F2D2F6D784C /* AppDatabaseTests.swift */; };
@@ -49,11 +50,13 @@
 		58E54D2582994208C0327B4D /* MediaAudioExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BF4BF89F0ACCF155040239 /* MediaAudioExtractor.swift */; };
 		5C5366AE7344334BDAF84189 /* ProgressTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F5DA36EB548637439CF0FF /* ProgressTracker.swift */; };
 		5DF5B95E3DF71CEFE4ABC65C /* M3UImportCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F425C02B39626719C7E0B0 /* M3UImportCoordinator.swift */; };
+		5F6C9144B946553E4AF2E799 /* IPTVOrgLogoClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F320971556B8FDD77590CBE /* IPTVOrgLogoClient.swift */; };
 		63ACC2AC409CC28CCB5752AD /* TitleNormalizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32147C52C90B5DDC3DEF465A /* TitleNormalizer.swift */; };
 		646639AC4D0AD69C7835C48E /* XMLTVParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8765CDD95F40F3394D4E89DA /* XMLTVParser.swift */; };
 		66E859AF193C65EB181E09F7 /* RemoteArtworkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71C8E5A19B2DCCBF0F765F5 /* RemoteArtworkView.swift */; };
 		676CC8D0D280C79B125B32C3 /* ImportPipeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBF8B53EBD9198557F43562 /* ImportPipeline.swift */; };
 		6B865A1513539F467051EA39 /* LibraryTranscriptionCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0C597C4045CF2B0483F01E /* LibraryTranscriptionCoordinator.swift */; };
+		6E1F19B61693ED78BED9E364 /* IPTVOrgLogoClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F320971556B8FDD77590CBE /* IPTVOrgLogoClient.swift */; };
 		708577447BAB064E0EF24C17 /* SeriesDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78094152968CD929107CB4A0 /* SeriesDetailView.swift */; };
 		71F25A5E84EF4237BEE77B44 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2FEC7366BBB35B5F2AA243 /* PlayerView.swift */; };
 		738A1653929A9DE17B964E78 /* ContentClassifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627E95A5BDF9AC77F1332E09 /* ContentClassifier.swift */; };
@@ -108,6 +111,7 @@
 		DE466FDC0082E8424C560C28 /* AppPaths.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632BD55B88F96DB14DF939B4 /* AppPaths.swift */; };
 		DE4F6084654F614BB52133AC /* MetadataConfidenceScorerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D1E3DDA6A31A823CC9797B /* MetadataConfidenceScorerTests.swift */; };
 		E30A4AD4DC970FE0BD6FFC0D /* MetadataConfidenceScorer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3803DFE5812267D4CE4A3ADC /* MetadataConfidenceScorer.swift */; };
+		E30B7113732F25AD286ACF17 /* ArtworkCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019D9A199202B4953AA69805 /* ArtworkCache.swift */; };
 		E4D0F93B99C116970167CC75 /* YOUFLEXUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4BBE2B587B49A90898451E /* YOUFLEXUITests.swift */; };
 		E53F6CA3D43819A035D3EF7E /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = 2DC8A5EBD85F4F661EBAF8DA /* Nuke */; };
 		E73FF11FFD9C98281504903A /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D096F4141BF7C0E6B9AD59 /* HomeView.swift */; };
@@ -142,6 +146,7 @@
 
 /* Begin PBXFileReference section */
 		014200D3719A55E1FF6334DB /* XtreamClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XtreamClient.swift; sourceTree = "<group>"; };
+		019D9A199202B4953AA69805 /* ArtworkCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtworkCache.swift; sourceTree = "<group>"; };
 		08BF093A681E8F04ABAE4940 /* M3UImportCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = M3UImportCoordinatorTests.swift; sourceTree = "<group>"; };
 		0C3B17DD1E85C2D9F61B778A /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		0D834D777693243DE102DD21 /* SurfaceComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurfaceComponents.swift; sourceTree = "<group>"; };
@@ -152,6 +157,7 @@
 		26B1A6325CE533AE3A2A560F /* OfflineDownloadManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineDownloadManager.swift; sourceTree = "<group>"; };
 		2A1A5D2F2C0A1E2D49DB5C87 /* YOUFLEX_macOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YOUFLEX_macOSApp.swift; sourceTree = "<group>"; };
 		2AF88A2E44EBAB9D5CEF8CD7 /* AppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
+		2F320971556B8FDD77590CBE /* IPTVOrgLogoClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPTVOrgLogoClient.swift; sourceTree = "<group>"; };
 		32147C52C90B5DDC3DEF465A /* TitleNormalizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleNormalizer.swift; sourceTree = "<group>"; };
 		3803DFE5812267D4CE4A3ADC /* MetadataConfidenceScorer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetadataConfidenceScorer.swift; sourceTree = "<group>"; };
 		3E71E8DDD7C2BBE372E69637 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -283,6 +289,15 @@
 				DE4BBE2B587B49A90898451E /* YOUFLEXUITests.swift */,
 			);
 			path = YOUFLEXUITests;
+			sourceTree = "<group>";
+		};
+		2356E648AF2AEDA4C530B503 /* Artwork */ = {
+			isa = PBXGroup;
+			children = (
+				019D9A199202B4953AA69805 /* ArtworkCache.swift */,
+				2F320971556B8FDD77590CBE /* IPTVOrgLogoClient.swift */,
+			);
+			path = Artwork;
 			sourceTree = "<group>";
 		};
 		2D767B23EFEF8A5055ABDCE6 /* YOUFLEXmacOS */ = {
@@ -533,6 +548,7 @@
 		F19A3DF9A6A64AD2FE259BA9 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				2356E648AF2AEDA4C530B503 /* Artwork */,
 				E020340B2AEAC858D39ECEFB /* Downloads */,
 				59F03B4CED39F9FA99DA446F /* Enrichment */,
 				005B68B50A61FB3342667EDE /* EPG */,
@@ -686,9 +702,11 @@
 				467D48BB1E88AC1D79CD497B /* AppTab.swift in Sources */,
 				B931BF955765BAB8AED1CF31 /* AppTheme.swift in Sources */,
 				284DDFEE502118B02B14F918 /* AppView.swift in Sources */,
+				21483393EC7D6D6D1B8AD661 /* ArtworkCache.swift in Sources */,
 				738A1653929A9DE17B964E78 /* ContentClassifier.swift in Sources */,
 				F8401E340A78D3D2A3811609 /* DownloadsView.swift in Sources */,
 				A2733383EDCB18F87D0A66FD /* HomeView.swift in Sources */,
+				5F6C9144B946553E4AF2E799 /* IPTVOrgLogoClient.swift in Sources */,
 				0DB9F9D7F88BB2FA84816643 /* ImportPipeline.swift in Sources */,
 				E7BEE5CE71E8E556A445DB19 /* ImportPipelineProgress.swift in Sources */,
 				857482C1C1FA5B7A7B3F0C54 /* KeychainManager.swift in Sources */,
@@ -744,9 +762,11 @@
 				4A62F084E13C25F2D4834D8A /* AppTab.swift in Sources */,
 				3B0096D8837AB120B47B196A /* AppTheme.swift in Sources */,
 				4CC9D5D88A0CD1BAFABEF702 /* AppView.swift in Sources */,
+				E30B7113732F25AD286ACF17 /* ArtworkCache.swift in Sources */,
 				9059B6ABF76EA765301D9304 /* ContentClassifier.swift in Sources */,
 				9D1162833E583683D5FD6498 /* DownloadsView.swift in Sources */,
 				E73FF11FFD9C98281504903A /* HomeView.swift in Sources */,
+				6E1F19B61693ED78BED9E364 /* IPTVOrgLogoClient.swift in Sources */,
 				676CC8D0D280C79B125B32C3 /* ImportPipeline.swift in Sources */,
 				A1C44A7D8D52631A83224CC9 /* ImportPipelineProgress.swift in Sources */,
 				C628F9F5C18E2A94814A1607 /* KeychainManager.swift in Sources */,

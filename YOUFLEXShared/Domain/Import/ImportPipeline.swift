@@ -147,6 +147,11 @@ actor ImportPipeline {
                     await updateProgress { $0.dedupSkipped += 1 }
                     continue
                 }
+                var logoUrl = entry.logoURL
+                if (logoUrl == nil || logoUrl?.isEmpty == true),
+                   let lookupId = entry.tvgID ?? entry.tvgName {
+                    logoUrl = await IPTVOrgLogoClient.logoURL(for: lookupId)
+                }
                 let channel = ChannelRecord(
                     id: Self.stableIdentifier(prefix: "channel", seed: "\(providerId)|\(streamHash)"),
                     providerId: providerId,
@@ -157,7 +162,7 @@ actor ImportPipeline {
                     category: entry.groupTitle,
                     tvgId: entry.tvgID,
                     tvgName: entry.tvgName,
-                    logoUrl: entry.logoURL,
+                    logoUrl: logoUrl,
                     epgChannelId: entry.tvgID ?? entry.tvgName,
                     country: nil,
                     isHD: entry.title.localizedCaseInsensitiveContains("HD") || entry.title.localizedCaseInsensitiveContains("UHD"),
