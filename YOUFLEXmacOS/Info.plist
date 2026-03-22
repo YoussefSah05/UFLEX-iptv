@@ -22,5 +22,7 @@
 	<string>1</string>
 	<key>LSApplicationCategoryType</key>
 	<string>public.app-category.entertainment</string>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>Live captions analyze playback audio on device for subtitles.</string>
 </dict>
 </plist>

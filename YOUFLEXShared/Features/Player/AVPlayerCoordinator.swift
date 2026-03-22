@@ -18,7 +18,10 @@ final class AVPlayerCoordinator {
     var currentTimeText = "00:00"
     var durationText = "--:--"
     var isPlaying = false
+    /// Live channel captions from `SFSpeechRecognizer` (when tap is active).
+    var liveCaptionText: String = ""
 
+    private let liveSpeech = LiveSpeechTranscriber()
     private var pendingResumePositionMs: Int64 = 0
     private var itemObservation: NSKeyValueObservation?
     private var timeControlObservation: NSKeyValueObservation?
@@ -37,6 +40,8 @@ final class AVPlayerCoordinator {
     }
 
     func load(_ presentation: PlaybackPresentation, resumePositionMs: Int64 = 0) {
+        liveSpeech.stop()
+        liveCaptionText = ""
         resetObservers()
 
         status = .loading
@@ -90,9 +95,20 @@ final class AVPlayerCoordinator {
         }
 
         player.replaceCurrentItem(with: item)
+
+        if presentation.kind == .live {
+            Task { [weak self] in
+                guard let self else { return }
+                await self.liveSpeech.attachIfPossible(to: item) { [weak self] text in
+                    self?.liveCaptionText = text
+                }
+            }
+        }
     }
 
     func stop() {
+        liveSpeech.stop()
+        liveCaptionText = ""
         player.pause()
         player.replaceCurrentItem(with: nil)
         resetObservers()

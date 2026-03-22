@@ -42,6 +42,7 @@ targets:
           UIApplicationSupportsMultipleScenes: false
         UILaunchScreen: {}
         LSApplicationCategoryType: public.app-category.entertainment
+        NSSpeechRecognitionUsageDescription: Live captions analyze playback audio on device for subtitles.
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.youflex.apple.ios
@@ -65,6 +66,7 @@ targets:
       properties:
         CFBundleDisplayName: YOUFLEX
         LSApplicationCategoryType: public.app-category.entertainment
+        NSSpeechRecognitionUsageDescription: Live captions analyze playback audio on device for subtitles.
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.youflex.apple.macos

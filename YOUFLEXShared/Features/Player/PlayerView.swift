@@ -14,7 +14,7 @@ struct PlayerView: View {
             PlayerControlsContainer(
                 coordinator: coordinator,
                 presentation: presentation,
-                activeTranscriptText: activeTranscriptText
+                activeTranscriptText: overlayTranscriptText
             ) {
                 VideoPlayer(player: coordinator.player)
             }
@@ -162,6 +162,15 @@ struct PlayerView: View {
         transcriptSegments.first(where: { segment in
             coordinator.currentPositionMs >= segment.startMs && coordinator.currentPositionMs <= segment.endMs
         })?.text
+    }
+
+    /// VOD: timed transcript segments. Live: on-device speech recognition.
+    private var overlayTranscriptText: String? {
+        if presentation.kind == .live {
+            let t = coordinator.liveCaptionText
+            return t.isEmpty ? nil : t
+        }
+        return activeTranscriptText
     }
 
     private var transcriptStateLabel: String {
