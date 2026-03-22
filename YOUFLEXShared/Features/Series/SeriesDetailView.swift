@@ -13,7 +13,8 @@ struct SeriesDetailView: View {
                         RemoteArtworkView(
                             urlString: series.posterPath,
                             placeholderSystemImage: "square.stack.3d.up",
-                            size: CGSize(width: 112, height: 164)
+                            size: CGSize(width: 112, height: 164),
+                            placeholderTitle: series.title
                         )
 
                         VStack(alignment: .leading, spacing: AppTheme.Spacing.sm) {

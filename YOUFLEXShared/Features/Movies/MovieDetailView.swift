@@ -12,7 +12,8 @@ struct MovieDetailView: View {
                         RemoteArtworkView(
                             urlString: movie.posterPath,
                             placeholderSystemImage: "film",
-                            size: CGSize(width: 120, height: 178)
+                            size: CGSize(width: 120, height: 178),
+                            placeholderTitle: movie.title
                         )
 
                         VStack(alignment: .leading, spacing: AppTheme.Spacing.md) {
