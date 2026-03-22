@@ -60,11 +60,21 @@ struct LibraryEnrichmentCoordinator {
         }
 
         let details = try await client.fetchMovieDetails(id: bestCandidate.0.id)
+        let posterURLString = imageConfiguration.posterURL(path: details.posterPath ?? bestCandidate.0.posterPath)
+        let backdropURLString = imageConfiguration.backdropURL(path: details.backdropPath ?? bestCandidate.0.backdropPath)
+        var posterPath = movie.posterPath
+        var backdropPath = movie.backdropPath
+        if let urlString = posterURLString, let url = URL(string: urlString) {
+            posterPath = try await ArtworkCache.downloadAndCachePoster(url: url, contentType: "movie", contentId: movie.id) ?? posterPath
+        }
+        if let urlString = backdropURLString, let url = URL(string: urlString) {
+            backdropPath = try await ArtworkCache.downloadAndCacheBackdrop(url: url, contentType: "movie", contentId: movie.id) ?? backdropPath
+        }
         return MovieEnrichmentUpdate(
             movieId: movie.id,
             tmdbId: details.id,
-            posterPath: imageConfiguration.posterURL(path: details.posterPath ?? bestCandidate.0.posterPath) ?? movie.posterPath,
-            backdropPath: imageConfiguration.backdropURL(path: details.backdropPath ?? bestCandidate.0.backdropPath) ?? movie.backdropPath,
+            posterPath: posterPath,
+            backdropPath: backdropPath,
             synopsis: details.overview ?? bestCandidate.0.overview ?? movie.synopsis,
             genres: details.genres ?? movie.genres,
             runtime: details.runtime ?? movie.runtime,
@@ -89,11 +99,21 @@ struct LibraryEnrichmentCoordinator {
         }
 
         let details = try await client.fetchSeriesDetails(id: bestCandidate.0.id)
+        let posterURLString = imageConfiguration.posterURL(path: details.posterPath ?? bestCandidate.0.posterPath)
+        let backdropURLString = imageConfiguration.backdropURL(path: details.backdropPath ?? bestCandidate.0.backdropPath)
+        var posterPath = series.posterPath
+        var backdropPath = series.backdropPath
+        if let urlString = posterURLString, let url = URL(string: urlString) {
+            posterPath = try await ArtworkCache.downloadAndCachePoster(url: url, contentType: "series", contentId: series.id) ?? posterPath
+        }
+        if let urlString = backdropURLString, let url = URL(string: urlString) {
+            backdropPath = try await ArtworkCache.downloadAndCacheBackdrop(url: url, contentType: "series", contentId: series.id) ?? backdropPath
+        }
         return SeriesEnrichmentUpdate(
             seriesId: series.id,
             tmdbId: details.id,
-            posterPath: imageConfiguration.posterURL(path: details.posterPath ?? bestCandidate.0.posterPath) ?? series.posterPath,
-            backdropPath: imageConfiguration.backdropURL(path: details.backdropPath ?? bestCandidate.0.backdropPath) ?? series.backdropPath,
+            posterPath: posterPath,
+            backdropPath: backdropPath,
             synopsis: details.overview ?? bestCandidate.0.overview ?? series.synopsis,
             genres: details.genres ?? series.genres,
             status: details.status ?? series.status,
